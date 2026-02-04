@@ -1,0 +1,84 @@
+#! /usr/bin/vvp
+:ivl_version "11.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision + 0;
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/system.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_sys.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/vhdl_textio.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/v2005_math.vpi";
+:vpi_module "/usr/lib/x86_64-linux-gnu/ivl/va_math.vpi";
+S_0x609f36f65b30 .scope module, "basic_testbench1" "basic_testbench1" 2 1;
+ .timescale 0 0;
+v0x609f36f7caa0_0 .var "a", 0 0;
+v0x609f36f7cb60_0 .var "b", 0 0;
+v0x609f36f7cc00_0 .net "c", 0 0, L_0x609f36f54070;  1 drivers
+v0x609f36f7cca0_0 .net "d", 0 0, L_0x609f36f7d1c0;  1 drivers
+v0x609f36f7cd40_0 .net "e", 0 0, L_0x609f36f7d380;  1 drivers
+v0x609f36f7cde0_0 .net "f", 0 0, L_0x609f36f7d570;  1 drivers
+v0x609f36f7ceb0_0 .net "g", 0 0, L_0x609f36f7d670;  1 drivers
+v0x609f36f7cf80_0 .net "h", 0 0, L_0x609f36f7d7f0;  1 drivers
+v0x609f36f7d050_0 .net "i", 0 0, L_0x609f36f7d900;  1 drivers
+S_0x609f36f65cc0 .scope module, "dut" "verilog_basic1" 2 5, 3 2 0, S_0x609f36f65b30;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /INPUT 1 "b";
+    .port_info 2 /OUTPUT 1 "c";
+    .port_info 3 /OUTPUT 1 "d";
+    .port_info 4 /OUTPUT 1 "e";
+    .port_info 5 /OUTPUT 1 "f";
+    .port_info 6 /OUTPUT 1 "g";
+    .port_info 7 /OUTPUT 1 "h";
+    .port_info 8 /OUTPUT 1 "i";
+L_0x609f36f54070 .functor OR 1, v0x609f36f7caa0_0, v0x609f36f7cb60_0, C4<0>, C4<0>;
+L_0x609f36f7d1c0 .functor NOT 1, v0x609f36f7caa0_0, C4<0>, C4<0>, C4<0>;
+L_0x609f36f7d280 .functor AND 1, v0x609f36f7caa0_0, v0x609f36f7cb60_0, C4<1>, C4<1>;
+L_0x609f36f7d380 .functor NOT 1, L_0x609f36f7d280, C4<0>, C4<0>, C4<0>;
+L_0x609f36f7d470 .functor OR 1, v0x609f36f7caa0_0, v0x609f36f7cb60_0, C4<0>, C4<0>;
+L_0x609f36f7d570 .functor NOT 1, L_0x609f36f7d470, C4<0>, C4<0>, C4<0>;
+L_0x609f36f7d670 .functor XOR 1, v0x609f36f7caa0_0, v0x609f36f7cb60_0, C4<0>, C4<0>;
+L_0x609f36f7d730 .functor XOR 1, v0x609f36f7caa0_0, v0x609f36f7cb60_0, C4<0>, C4<0>;
+L_0x609f36f7d7f0 .functor NOT 1, L_0x609f36f7d730, C4<0>, C4<0>, C4<0>;
+L_0x609f36f7d900 .functor AND 1, v0x609f36f7caa0_0, v0x609f36f7cb60_0, C4<1>, C4<1>;
+v0x609f36f562e0_0 .net *"_ivl_14", 0 0, L_0x609f36f7d730;  1 drivers
+v0x609f36f7c0d0_0 .net *"_ivl_4", 0 0, L_0x609f36f7d280;  1 drivers
+v0x609f36f7c1b0_0 .net *"_ivl_8", 0 0, L_0x609f36f7d470;  1 drivers
+v0x609f36f7c270_0 .net "a", 0 0, v0x609f36f7caa0_0;  1 drivers
+v0x609f36f7c330_0 .net "b", 0 0, v0x609f36f7cb60_0;  1 drivers
+v0x609f36f7c440_0 .net "c", 0 0, L_0x609f36f54070;  alias, 1 drivers
+v0x609f36f7c500_0 .net "d", 0 0, L_0x609f36f7d1c0;  alias, 1 drivers
+v0x609f36f7c5c0_0 .net "e", 0 0, L_0x609f36f7d380;  alias, 1 drivers
+v0x609f36f7c680_0 .net "f", 0 0, L_0x609f36f7d570;  alias, 1 drivers
+v0x609f36f7c740_0 .net "g", 0 0, L_0x609f36f7d670;  alias, 1 drivers
+v0x609f36f7c800_0 .net "h", 0 0, L_0x609f36f7d7f0;  alias, 1 drivers
+v0x609f36f7c8c0_0 .net "i", 0 0, L_0x609f36f7d900;  alias, 1 drivers
+    .scope S_0x609f36f65b30;
+T_0 ;
+    %vpi_call 2 17 "$monitor", "Time=%0t|a=%b b=%b -> c=%b d=%b e=%b f=%b g=%b h=%b i=%b", $time, v0x609f36f7caa0_0, v0x609f36f7cb60_0, v0x609f36f7cc00_0, v0x609f36f7cca0_0, v0x609f36f7cd40_0, v0x609f36f7cde0_0, v0x609f36f7ceb0_0, v0x609f36f7cf80_0, v0x609f36f7d050_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x609f36f7caa0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x609f36f7cb60_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x609f36f7caa0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x609f36f7cb60_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x609f36f7caa0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x609f36f7cb60_0, 0, 1;
+    %delay 10, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x609f36f7caa0_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x609f36f7cb60_0, 0, 1;
+    %vpi_call 2 23 "$finish" {0 0 0};
+    %end;
+    .thread T_0;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "basic_gates_tb.v";
+    "basic_gates.v";
