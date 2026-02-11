@@ -67,20 +67,13 @@ module RipplecarryAdd_tb;
                  Cin,
                  S3, S2, S1, S0,
                  C4);
-
-        // Test case 1: 0 + 0
         A3=0; A2=0; A1=0; A0=0;
         B3=0; B2=0; B1=0; B0=0;
         Cin=0;
         #10;
-
-        // Test case 2: 3 + 5 = 8
         A3=0; A2=0; A1=1; A0=1;
         B3=0; B2=1; B1=0; B0=1;
-        Cin=0;
-        #10;
-
-        // Test case 3: 15 + 1 = 16 (overflow)
+        Cin=0;#10;
         A3=1; A2=1; A1=1; A0=1;
         B3=0; B2=0; B1=0; B0=1;
         Cin=0;
